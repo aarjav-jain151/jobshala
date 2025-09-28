@@ -43,46 +43,58 @@ The application implements comprehensive features for both job seekers and recru
 
 ## ⚙️ Installation & Setup (Local Development)
 
-Follow these steps to get the project running on your local machine:
+Follow these steps to clone the repository and run the project locally.
 
 1.  **Clone the Repository:**
+
+    First, navigate to the folder where you want to store your projects, and then clone the repository.
     ```bash
+    # 1. Clone the project (downloads the code)
     git clone [https://github.com/aarjav-jain151/jobshala.git](https://github.com/aarjav-jain151/jobshala.git)
-    cd jobshala-mern
+    
+    # 2. Change directory into the new project folder
+    cd jobshala
     ```
 
 2.  **Install Dependencies (Backend & Frontend):**
+
+    You need to install packages for both the server and the client.
     ```bash
-    # Backend
+    # Install backend dependencies
     cd backend
     npm install
     
-    # Frontend
+    # Install frontend dependencies (navigate back, then into frontend)
     cd ../frontend
     npm install
     ```
 
 3.  **Setup Environment Variables:**
-    * Create a file named **`.env`** inside the **`backend`** directory.
-    * Add your local configuration:
-        ```env
-        MONGO_URI=mongodb://aarjavjain151_db_user:K%3FJV85sMUz5nBRzB@rstzftd.mongodb.net/jobportal_app
-        JWT_SECRET_KEY=VIBGYOR-Jobshala-S3cur3-K3y-42069-M3RN-Stack-R3nd3r-D3pl0y-Aarjav
-        NODE_ENV=development
-        PORT=8000
-        FRONTEND_URL=http://localhost:5173
-        ```
+
+    Create a file named **`.env`** inside the **`backend`** directory. Add your specific credentials here. **Note:** The `MONGO_URI` below should be the working string from your MongoDB Atlas setup (including any URL-encoding for the password).
+    
+    ```env
+    # Replace these placeholders with your actual secrets
+    MONGO_URI=mongodb://<YOUR_ATLAS_USER>:<YOUR_URL_ENCODED_PASS>@<YOUR_CLUSTER_URL>/jobportal_app
+    JWT_SECRET_KEY=A_NEW_LONG_RANDOM_SECRET_KEY_FOR_LOCAL_DEV
+    
+    # Local Development Settings
+    NODE_ENV=development
+    PORT=8000
+    FRONTEND_URL=http://localhost:5173
+    ```
 
 4.  **Run the Project:**
-    * **Start Backend** (in one terminal):
-        ```bash
-        cd backend
-        npm run dev
-        ```
-    * **Start Frontend** (in a new terminal):
-        ```bash
-        cd frontend
-        npm run dev
-        ```
 
-The application will be live at `http://localhost:5173`.
+    Open two separate terminals/tabs in VS Code to run the frontend and backend simultaneously.
+    ```bash
+    # Terminal 1: Start Backend Server
+    cd backend
+    npm run dev
+    
+    # Terminal 2: Start Frontend Application
+    cd frontend
+    npm run dev
+    ```
+
+The application will be live in your browser at **`http://localhost:5173`**.
