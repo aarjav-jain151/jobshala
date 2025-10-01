@@ -26,6 +26,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3000;
+// Root Route for Health Check (Fixes 404 NOT_FOUND on Render)
+app.get("/", (req, res) => {
+    res.status(200).send("Jobshala Backend is Running! Access APIs via /api/v1/");
+});
 
 
 // api's
